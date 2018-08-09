@@ -1,0 +1,38 @@
+<section class="post-index">
+    <div>
+      <div class="col-md-6">
+          
+       <h1><%= link_to @article.title, class:"large-title"%></h1>
+       <span>
+        <div class="editor-post-info">
+          <%= image_tag @article.user.avatar.url, :secure => true, class:"image-editor-index"%>
+          <div>
+              <%= @article.user.username %>
+            <div class="date-topips-posts">
+              <div class="date-post">
+              <%= @article.created_at.strftime("%d %b. %Y %H:%M") %>
+              </div>
+              <div>
+                <a href="/blog/topic/open-source" class="read-me">Topic</a>
+              
+                <a href="/blog/topic/github" class="read-me">Toppic 2</a>     
+              </div>
+            </div>
+          </div>
+        </div>   
+       </span>
+      
+      <div class="body-post-index">
+       <h2 class="text-post">
+          <%= raw @article.body %>   
+       </h2>
+       
+      </div>
+      <%= link_to 'Edit', edit_article_path(@article) %> |
+      <%= link_to 'Back', articles_path %>
+      </div>
+      
+    </div>
+</section>
+
+
